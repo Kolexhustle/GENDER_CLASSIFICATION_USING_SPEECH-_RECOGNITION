@@ -1,0 +1,143 @@
+MATLAB PROJECT
+GROUP 16 
+
+COURSE TITLE (COURSE CODE):
+INTRODUCTION TO COMPUTER PACKAGES (EEE 206)
+
+PROJECT TITLE:
+GENDER CLASSIFICATION USING SPEECH RECOGNITION
+
+GROUP LEADER:
+OKOLI HENRY C. (EEG/2018/059)
+
+GROUP MEMBERS:
+OWOLABI DANIEL O. (EEG/2018/078) 
+OWOLABI OPEYEMI STEPHEN (EEG/2018/079)
+OWONIFARI AYODAMOLA N. (EEG/2018/080) 
+PETER EMMANUEL AMEH (EEG/2018/081)
+
+OVERVIEW OF PROJECT
+The project as titled above is a gender classification project using speech recognition. Our main aim is to use matlab to distinguish between a male and a female using different features of their voices. For instance, naturally women have a higher pitched frequency than men and this was one of the features exploited in the execution of our project.
+There are many pre-trained networks and datasheets that could have been used for this project, but we decided to use the GATE RECCURENT UNIT network (GRU network) which is still the most versatile and newest RNN that’s been able to overcome memory loss.
+PRACTICAL APPLICATION OF THE PROJECT
+There’s no element of doubt in the fact that evil thrives in dark and uncensored niches. Toilets of schools and public toilets have become altars of rape cases since time immemorial. The plight of rape victims is captured in the following links:
+https://dailynigerian.com/2-men-rape-11-year-old-girl-in-kebbi-public-toilet/
+https://www.nigerianbulletin.com/threads/man-reportedly-rapes-11-year-old-girl-inside-public-toilet.143135/
+https://parrotnigeria.com/three-secondary-school-students-rape-4-year-old-girl-in-school-toilet/
+https://dailypost.ng/2014/08/14/teacher-rapes-10-year-old-pupil-school-toilet/
+Many of these cases are perpetrated under the guise of being a gender that’s not one’s. Hence, this project is designed to address the upsurge in rape cases in public toilets and school toilets both in our local environment and abroad. 
+N.B:   This project takes only both the male and female gender into account
+HOW TO RUN THE CODE?
+Firstly, you would need to have the gender classification file which has already been pre-trained using the GRU network model. Your PC also by default already has an audio input device(microphone) that is working properly.
+ The next thing to do is to copy the source code to the current folder (that is, the .mat files). There are going to be two files, one which is a function to be called in the main code and the code to be ran itself.
+Sometimes, when you copy the files to your current folder, the computer might tell you that you do not have permission to paste the files. Well do not be afraid, you can open the current folder in the windows explorer by right clicking on the current folder and paste it there. Although when running the code finally, you might need to change folder path to a more convenient path.
+Once the files are on your matlab window, you save them both. Remember to save the function so that it can be called and passed to the main code. When you are done saving, go to where you stored the gender classification file pre-trained using GRU network model and copy the file path.
+The already copied location would be pasted like below;
+“netFolder = fullfile (‘location of the GRU NETWORK on your PC')”
+
+After doing this, you can run the code and start speaking immediately you see the instruction on your command window. The code should be able to tell from your speech if you’re a male or female. Also, it is advisable to use a headphone microphone to input your speech so as to reduce noise effect. The pre-trained model has an accuracy of 92%, hence certain flaws are expected to win over the remaining 8%, so it might give you undefined if it does not read your voice well. That is why you might need an ear piece to ensure accurate results.
+HOW THE CODE WORKS?
+To really understand how the code works, we need to understand how the GRU network works.
+GRU NETWORK
+To understand the GRU network we must first understand what the Recurrent Neural Network is. These are complex algorithm that works on the same principle as the neurons in the human brain. The RNN is the initial algorithm that memorizes it inputs, which makes it absolutely suitable for machine learning problems.
+The RNN is characterized with the challenge of short-term memory, take instance in a lengthy data series, The RNN comes across troubles in carrying data from previous steps to later ones. For instance, in the analysis of a text paragraph, after being processed to complete predictions, there are chances that RNN can leave significant information from the start, this problem called the fading gradient problem. Simply put the RNN can fail to remember what is experienced in a lengthy data series and hence face short-term memory.
+
+A Gated Recurrent Unit is a variant of the RNN design and employs a gated process to control and manage the flow of information between cells in the neural network. It solves the problem of the fading gradient prominent in the RNN. It does this through 2 essential features namely;
+1.	The Update gate:
+The update gate aids the model to decide how much of the earlier information (from previous time steps) requires flowing along to the future. This is truly strong because the model can choose to copy all the details from the past and eradicate the threat of the fading gradient problem.
+2.	Reset gate:
+THE reset gate decides how much of the past information to disregard, it classifies the unrelated data and tells the model to forget this data and move forward without it.
+
+ The GRU network is suitable for a series of small data, GRU are required in complex problem domains like machine translation, speech recognition, Speech Synthesis, Sentiment Analysis, Stock Price Prediction, and Machine Comprehension, and more.
+
+In this project we used an already trained GRU network to predict the gender of an audio input, we made some modifications to the codes to allow automatic input when the run is initiated, the program as we have observed through previous test makes the right prediction 90% of the time.
+We chose this project with the aim to solve insecurity issues particularly sexual assault.
+In the U.S. Department of Justice's National Crime Victimization Survey states that on average there are 237,868 victims (age 12 or older) of sexual assault and rape each year. According to RAINN, every 107 seconds someone in America is sexually assaulted. 
+With this is view this project with further optimization can be implemented in public toilets and boarding school hostels to detect the presence of an opposite sex, this information can be used by security personnel’s or to alert a potential victim of a sexual assault prior to his/her attack, thereby reducing rape cases.
+Now, we first create a full file name from the disk name, directory and filename of the location of the gender classification file on the PC. We used the function “fullfile” as shown below;
+“netFolder = fullfile('C:\Users\DELL\Desktop\GenderClassification')”
+
+As stated above, we can see that the fullfile function saves the gender classification folder in a file named “netFolder”. The next thing we did was to create another file still using the “fullfile” function, we created a variable called “matFileName” and stored the “genderIDNet.mat” which is in the “netfolder” variable. After this you’ll load the file.
+
+“matFileName = fullfile(netFolder, 'genderIDNet.mat')”
+
+“load(matFileName,'genderIDNet','M','S')”
+
+Now, this is where it gets interesting a bit, after we downloaded the pre-trained network, we searched the internet to see if there were instances where such a network had been employed to take real-time inputs and afterwards make predictions both as accurate and as fast as possible. There were good projects online though, but none addressed our desire to give life to the network with our voices. So, we as a group decided to take up this challenge and make it conform to our desire. Guess what we did?
+
+We decided to create an audio function by exploiting MATLAB’s “audiorecorder” function which is capable of recording voices in real-time. We needed to change the Frequency sample to 48000Hz and the bit to a value of 8 and set the audio channel to 1. The audio recorder function creates a file in the matlab workspace that stores audio inputs that are stored in real-time to a variable named “p”. 
+
+“p = audiorecorder (48000,8,1)”
+
+After this, we start recording by calling the “recordblocking” function. In calling the record blocking we inputted where it would be saved as the first value (that is, the variable in which the audio recorder function created the file) and length of audio as 5seconds.
+
+“recordblocking(p,5)”
+
+ After recording the voice, we needed to get the audio data so we used the “getaudiodata” function to do that job. The “getaudiodata” function gets the data of the recorded audio. After getting the audio we pass it into a variable.
+
+“getouraudio = getaudiodata(p)”
+
+Now, we need to make the audio a “.wav” file which will make it easier for the GRU network to read. There are actually other files we can turn the audio file into. For example .flac,.mp3,.aac etc. To write the audio file we use the “audiowrite” function and pass the variable containing our audiodata inside it. We also need to pass in the sample frequency to the function.
+
+“audiowrite('audio2.wav',getouraudio,p.SampleRate)”
+
+After doing all this, we sounded the audio and plotted the graph of the audio file.
+
+Now, the function has been written and it would be called into the main code. I think now you know why you would need to save the function to be able to run the main code, because it might give you an error of unknown function if you run the code without saving the function.
+We have written the function and called it in the main code, so now we need to read the audio file.
+To do this we need the “audioread” function to see what the matrix of the input audio looks like. We just pass the function as shown in the code below;
+
+“[audioIn, Fs] = audioread('audio2.wav')”
+
+As seen above it is the written audio we are still reading and the audioIn is just a variable that stores the length of our audio while Fs is a shorthand for “Frequency Sample”.
+After reading the file, we need to detect the boundaries of speech in an audio signal.
+The “detectSpeech” function is what we use, the function returns the indices of the input audio that corresponds to the boundaries of speech.
+
+“boundaries = detectSpeech(audioIn, Fs)”
+
+After setting the boundaries, we input it into a matrix form and set it to the audioIn variable.
+
+“audioIn = audioIn(boundaries(1):boundaries(2))”
+
+Now, we need to carry out some Fourier analysis to get some features of the audio we need and also extract the features of the audio to compare with the trained network. There are various ways to do this, but we chose to use the “audioFeatureExtractor” function which takes in the multiple features of an audio and extract them into a streamlined and modular implementation. 
+The audio feature code is being stored in a variable called “extractor”, the values of the modular implementation of the features of the audio are stored therein.
+
+extractor = audioFeatureExtractor( ...
+    "SampleRate",Fs, ...
+    "Window",hamming(round(0.03*Fs),"periodic"), ...
+    "OverlapLength",round(0.02*Fs), ...
+    ...
+    "gtcc",true, ...
+    "gtccDelta",true, ...
+    "gtccDeltaDelta",true, ...
+    ...
+    "SpectralDescriptorInput","melSpectrum", ...
+    "spectralCentroid",true, ...
+    "spectralEntropy",true, ...
+    "spectralFlux",true, ...
+    "spectralSlope",true, ...
+    ...
+    "pitch",true, ...
+    "harmonicRatio",true
+
+After storing, we would need to extract what is stored in the variable, and we would do that by using the extract function to bring out features of the audio already calculated by the audio feature extractor function.
+
+“features = extract(extractor,audioIn)”
+
+The variable “features” is where the extracted features from the audio Feature extractor is stored. Now, we need to carry out some matrix operation. We need to transpose the variable “features”(a matrix) and take away a matrix “M” which was called in when we loaded the genderIDNet.mat file. We also called another matrix “S” when the loading was done and we need to divide element-wise the matrix “S” from the subtraction of the transpose of features and matrix “M”.
+
+“features = (features.' – M). /S)”
+
+The above code will perform the job perfectly well. So now we have the main feature we need, we then classify to see what the pre-trained network will tell us the gender is. We can classify using the Classify function as below.
+
+“gender = classify(genderIDNet,features)”
+
+This network as explicitly said earlier has an accuracy of 92%, just like an athlete becomes better by training and experience garnered from the field, the network can be greatly improved on by further training and vast use cases. 
+
+The last two codes are used to display the result after the running process. We used the “sprint” function so that the display of the gender and the string can be together on the same line.
+
+message = “Your gender is:  %s”
+
+Result = sprintf(message, gender).
+
+
