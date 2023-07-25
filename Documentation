@@ -1,33 +1,34 @@
 MATLAB PROJECT
-GROUP 16 
+GROUP 13
 
-COURSE TITLE (COURSE CODE):
-INTRODUCTION TO COMPUTER PACKAGES (EEE 206)
+COURSE TITLE :
+INTRODUCTION TO COMPUTER PACKAGES 
+(COURSE CODE):(EEE 254)
 
 PROJECT TITLE:
 GENDER CLASSIFICATION USING SPEECH RECOGNITION
 
 GROUP LEADER:
-OKOLI HENRY C. (EEG/2018/059)
+KOZEEM AHMMMED A. (EEG/20/059)
 
 GROUP MEMBERS:
-OWOLABI DANIEL O. (EEG/2018/078) 
-OWOLABI OPEYEMI STEPHEN (EEG/2018/079)
-OWONIFARI AYODAMOLA N. (EEG/2018/080) 
-PETER EMMANUEL AMEH (EEG/2018/081)
+BALOGUN EMMANUEL ()
+ADEDAPO TOLULOGBON L. ()
+FALEYE VICTOR O. (EEG/2015/054)
 
 OVERVIEW OF PROJECT
-The project as titled above is a gender classification project using speech recognition. Our main aim is to use matlab to distinguish between a male and a female using different features of their voices. For instance, naturally women have a higher pitched frequency than men and this was one of the features exploited in the execution of our project.
+The project, as titled above, is a gender classification project using speech recognition. Our main aim is to use Matlab to distinguish between males and females using different features of their voices. For instance, women naturally, women have a higher pitched frequency than men and this was one of the features exploited in the execution of our project.
 There are many pre-trained networks and datasheets that could have been used for this project, but we decided to use the GATE RECCURENT UNIT network (GRU network) which is still the most versatile and newest RNN that’s been able to overcome memory loss.
 PRACTICAL APPLICATION OF THE PROJECT
-There’s no element of doubt in the fact that evil thrives in dark and uncensored niches. Toilets of schools and public toilets have become altars of rape cases since time immemorial. The plight of rape victims is captured in the following links:
+There’s no element of doubt in the fact that evil thrives in dark and uncensored niches. Toilets in schools and public toilets have become altars of rape cases since time immemorial. The plight of rape victims is captured in the following links:
 https://dailynigerian.com/2-men-rape-11-year-old-girl-in-kebbi-public-toilet/
 https://www.nigerianbulletin.com/threads/man-reportedly-rapes-11-year-old-girl-inside-public-toilet.143135/
 https://parrotnigeria.com/three-secondary-school-students-rape-4-year-old-girl-in-school-toilet/
 https://dailypost.ng/2014/08/14/teacher-rapes-10-year-old-pupil-school-toilet/
-Many of these cases are perpetrated under the guise of being a gender that’s not one’s. Hence, this project is designed to address the upsurge in rape cases in public toilets and school toilets both in our local environment and abroad. 
-N.B:   This project takes only both the male and female gender into account
-HOW TO RUN THE CODE?
+Many of these cases are perpetrated under the guise of being of a gender that’s not one’s. Hence, this project is designed to address the upsurge in rape cases in public toilets and school toilets both in our local environment and abroad. 
+N.B:   This project takes only both the male and female genders into account
+
+HoW TO RUN THE CODE?.
 Firstly, you would need to have the gender classification file which has already been pre-trained using the GRU network model. Your PC also by default already has an audio input device(microphone) that is working properly.
  The next thing to do is to copy the source code to the current folder (that is, the .mat files). There are going to be two files, one which is a function to be called in the main code and the code to be ran itself.
 Sometimes, when you copy the files to your current folder, the computer might tell you that you do not have permission to paste the files. Well do not be afraid, you can open the current folder in the windows explorer by right clicking on the current folder and paste it there. Although when running the code finally, you might need to change folder path to a more convenient path.
