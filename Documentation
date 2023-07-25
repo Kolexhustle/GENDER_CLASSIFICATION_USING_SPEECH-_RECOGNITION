@@ -2,14 +2,15 @@ MATLAB PROJECT
 GROUP 13
 
 COURSE TITLE :
-INTRODUCTION TO COMPUTER PACKAGES 
-(COURSE CODE):(EEE 254)
+INTRODUCTION TO COMPUTER PACKAGES
+
+(COURSE CODE): (EEE 254)
 
 PROJECT TITLE:
 GENDER CLASSIFICATION USING SPEECH RECOGNITION
 
 GROUP LEADER:
-KOZEEM AHMMMED A. (EEG/20/059)
+KOZEEM AHMMED A. (EEG/2021/11)
 
 GROUP MEMBERS:
 BALOGUN EMMANUEL ()
@@ -19,24 +20,34 @@ FALEYE VICTOR O. (EEG/2015/054)
 OVERVIEW OF PROJECT
 The project, as titled above, is a gender classification project using speech recognition. Our main aim is to use Matlab to distinguish between males and females using different features of their voices. For instance, women naturally, women have a higher pitched frequency than men and this was one of the features exploited in the execution of our project.
 There are many pre-trained networks and datasheets that could have been used for this project, but we decided to use the GATE RECCURENT UNIT network (GRU network) which is still the most versatile and newest RNN that’s been able to overcome memory loss.
-PRACTICAL APPLICATION OF THE PROJECT
-There’s no element of doubt in the fact that evil thrives in dark and uncensored niches. Toilets in schools and public toilets have become altars of rape cases since time immemorial. The plight of rape victims is captured in the following links:
-https://dailynigerian.com/2-men-rape-11-year-old-girl-in-kebbi-public-toilet/
-https://www.nigerianbulletin.com/threads/man-reportedly-rapes-11-year-old-girl-inside-public-toilet.143135/
-https://parrotnigeria.com/three-secondary-school-students-rape-4-year-old-girl-in-school-toilet/
-https://dailypost.ng/2014/08/14/teacher-rapes-10-year-old-pupil-school-toilet/
-Many of these cases are perpetrated under the guise of being of a gender that’s not one’s. Hence, this project is designed to address the upsurge in rape cases in public toilets and school toilets both in our local environment and abroad. 
-N.B:   This project takes only both the male and female genders into account
 
-HoW TO RUN THE CODE?.
+PRACTICAL APPLICATION OF THE PROJECT
+The gender classification project using speech recognition technology has several practical applications across various industries and domains. Some of the key practical applications include:
+
+Voice Assistants and Virtual Agents:
+Gender classification is essential for voice assistants and virtual agents to provide personalized responses and interactions. By accurately identifying the user's gender, the system can tailor responses, recommendations, and services to better suit individual preferences.
+Many of these cases are perpetrated under the guise of being of a gender that’s not one’s. Hence, this project is designed to address the upsurge in rape cases in public toilets and school toilets both in our local environment and abroad. 
+
+Smart Home Devices:
+Gender classification can be used in smart home devices to provide personalized voice-controlled automation and services based on the user's gender. For example, adjusting lighting preferences, music playlists, and reminders.
+Security and Access Control:
+In security applications, voice-based gender classification can serve as an additional biometric authentication factor to improve access control systems. It can also aid in forensic investigations by narrowing down the potential gender of a speaker.
+
+Speech Therapy:
+Gender classification can assist speech therapists in evaluating and addressing gender-specific speech-related issues and providing tailored therapy programs.
+Customer Service and Call Centers:
+In customer service and call centers, gender classification can help route calls to the appropriate representatives or provide customized support based on the customer's gender. This can lead to more efficient and personalized customer interactions, improving overall customer satisfaction.
+N.B:   This project takes into account both the male and female genders into account.
+
+HOW TO RUN THE CODE?.
 Firstly, you would need to have the gender classification file which has already been pre-trained using the GRU network model. Your PC also by default already has an audio input device(microphone) that is working properly.
  The next thing to do is to copy the source code to the current folder (that is, the .mat files). There are going to be two files, one which is a function to be called in the main code and the code to be ran itself.
 Sometimes, when you copy the files to your current folder, the computer might tell you that you do not have permission to paste the files. Well do not be afraid, you can open the current folder in the windows explorer by right clicking on the current folder and paste it there. Although when running the code finally, you might need to change folder path to a more convenient path.
 Once the files are on your matlab window, you save them both. Remember to save the function so that it can be called and passed to the main code. When you are done saving, go to where you stored the gender classification file pre-trained using GRU network model and copy the file path.
 The already copied location would be pasted like below;
 “netFolder = fullfile (‘location of the GRU NETWORK on your PC')”
-
 After doing this, you can run the code and start speaking immediately you see the instruction on your command window. The code should be able to tell from your speech if you’re a male or female. Also, it is advisable to use a headphone microphone to input your speech so as to reduce noise effect. The pre-trained model has an accuracy of 92%, hence certain flaws are expected to win over the remaining 8%, so it might give you undefined if it does not read your voice well. That is why you might need an ear piece to ensure accurate results.
+
 HOW THE CODE WORKS?
 To really understand how the code works, we need to understand how the GRU network works.
 GRU NETWORK
@@ -49,13 +60,13 @@ The update gate aids the model to decide how much of the earlier information (fr
 2.	Reset gate:
 THE reset gate decides how much of the past information to disregard, it classifies the unrelated data and tells the model to forget this data and move forward without it.
 
- The GRU network is suitable for a series of small data, GRU are required in complex problem domains like machine translation, speech recognition, Speech Synthesis, Sentiment Analysis, Stock Price Prediction, and Machine Comprehension, and more.
+ The GRU network is suitable for a series of small data, GRU is required in complex problem domains like machine translation, speech recognition, Speech Synthesis, Sentiment Analysis, Stock Price Prediction, and Machine Comprehension, and more.
 
-In this project we used an already trained GRU network to predict the gender of an audio input, we made some modifications to the codes to allow automatic input when the run is initiated, the program as we have observed through previous test makes the right prediction 90% of the time.
-We chose this project with the aim to solve insecurity issues particularly sexual assault.
+In this project we used an already trained GRU network to predict the gender of audio input, we made some modifications to the codes to allow automatic input when the run is initiated, the program as we have observed through previous test makes the right prediction 90% of the time.
+We chose this project with the aim to solve insecurity issues, particularly sexual assault.
 In the U.S. Department of Justice's National Crime Victimization Survey states that on average there are 237,868 victims (age 12 or older) of sexual assault and rape each year. According to RAINN, every 107 seconds someone in America is sexually assaulted. 
 With this is view this project with further optimization can be implemented in public toilets and boarding school hostels to detect the presence of an opposite sex, this information can be used by security personnel’s or to alert a potential victim of a sexual assault prior to his/her attack, thereby reducing rape cases.
-Now, we first create a full file name from the disk name, directory and filename of the location of the gender classification file on the PC. We used the function “fullfile” as shown below;
+Now, we first create a full file name from the disk name, directory, and filename of the location of the gender classification file on the PC. We used the function “fullfile” as shown below;
 “netFolder = fullfile('C:\Users\DELL\Desktop\GenderClassification')”
 
 As stated above, we can see that the fullfile function saves the gender classification folder in a file named “netFolder”. The next thing we did was to create another file still using the “fullfile” function, we created a variable called “matFileName” and stored the “genderIDNet.mat” which is in the “netfolder” variable. After this you’ll load the file.
